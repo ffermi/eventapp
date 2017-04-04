@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- source: https://material.io/guidelines/style/color.html#color-color-palette -->
+
+    <!-- Primary 500, 100, 700 -->
+    <color name="colorPrimary">#03A9F4</color>
+    <color name="colorPrimaryLight">#B3E5FC</color>
+    <color name="colorPrimaryDark">#0288D1</color>
+
+    <!-- Secondary A200, A100, A400 -->
+    <color name="colorAccent">#FF6E40</color>
+    <color name="colorAccentLight">#FF9E80</color>
+    <color name="colorAccentDark">#FF3D00</color>
+
+    <!-- Text AA RR BB GG -->
+    <color name="colorTextPrimaryDark">#87000000</color>
+    <color name="colorTextPrimaryLight">#FFFFFF</color>
+    <color name="colorTextSecondaryDark">#54000000</color>
+    <color name="colorTextSecondaryLight">#70FFFFFF</color>
+    <color name="colorTextHintDark">#38000000</color>
+    <color name="colorTextHintLight">#50FFFFFF</color>
+
+    <!-- Divider AA RR BB GG -->
+    <color name="colorDividerDark">#12000000</color>
+    <color name="colorDividerLight">#12FFFFFF</color>
+
+    <!-- Icons -->
+    <color name="colorIconActiveDark">#54000000</color>
+    <color name="colorIconActiveLight">#FFFFFF</color>
+    <color name="colorIconInactiveDark">#38000000</color>
+    <color name="colorIconInactiveLight">#50FFFFFF</color>
+
+    <!-- Facebook -->
+    <color name="colorFacebookBlueDark">#3b5999</color>
+    <color name="colorFacebookBlueLight">#0080f6</color>
+</resources>
