@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.NewEventActivity"
+    tools:menu="@menu/new_event_menu">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <!-- Image and title -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/btn_add_image"
+                android:layout_width="@dimen/btn_add_image"
+                android:layout_height="@dimen/btn_add_image"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/ic_camera_white"
+                android:onClick="addPicture"/>
+
+            <EditText
+                android:id="@+id/new_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_toEndOf="@id/btn_add_image"
+                android:layout_alignBottom="@id/btn_add_image"
+                android:hint="@string/hint_title"/>
+
+        </RelativeLayout>
+
+        <!-- Data & Time pickers -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <ImageView
+                android:id="@+id/ic_calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                app:srcCompat="@drawable/ic_calendar"
+                android:layout_centerVertical="true" />
+
+            <!-- Start -->
+            <Button
+                android:id="@+id/start_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_today"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginStart="60dp"
+                android:layout_toEndOf="@id/ic_calendar"
+                android:onClick="showDatePickerDialog"/>
+
+            <Button
+                android:id="@+id/start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_now"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginStart="60dp"
+                android:layout_toEndOf="@id/start_date"
+                android:onClick="showTimePickerDialog"/>
+
+            <!-- End -->
+            <Button
+                android:id="@+id/end_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_end_date"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginStart="60dp"
+                android:layout_toEndOf="@id/ic_calendar"
+                android:layout_below="@id/start_date"
+                android:onClick="showDatePickerDialog"/>
+
+            <Button
+                android:id="@+id/end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_end_time"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginStart="60dp"
+                android:layout_toEndOf="@id/end_date"
+                android:layout_below="@id/start_time"
+                android:onClick="showTimePickerDialog"/>
+
+        </RelativeLayout>
+
+        <!-- Location - search with places -->
+
+
+
+        <!-- Description -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <ImageView
+                android:id="@+id/ic_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                app:srcCompat="@drawable/ic_edit"
+                android:layout_centerVertical="true"/>
+
+            <EditText
+                android:id="@+id/new_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_toRightOf="@id/ic_description"
+                android:hint="@string/hint_description"/>
+
+        </RelativeLayout>
+
+        <!-- Privacy -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <ImageView
+                android:id="@+id/ic_privacy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                app:srcCompat="@drawable/ic_public"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_toRightOf="@id/ic_privacy"
+                android:layout_centerVertical="true"
+                android:text="@string/hint_privacy"/>
+            <Switch
+                android:id="@+id/btn_private"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"/>
+
+        </RelativeLayout>
+
+        <!-- Attendees -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <ImageView
+                android:id="@+id/ic_add_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                app:srcCompat="@drawable/ic_person_add"
+                android:layout_centerVertical="true"/>
+
+            <Button
+                android:id="@+id/btn_add_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_invite_user"
+                android:background="?android:attr/selectableItemBackground"
+                android:textAlignment="textStart"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_toRightOf="@id/ic_add_user"/>
+
+        </RelativeLayout>
+
+        <!-- Hashtag -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <ImageView
+                android:id="@+id/ic_hashtag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                app:srcCompat="@drawable/ic_code"
+                android:layout_centerVertical="true"/>
+
+            <EditText
+                android:id="@+id/new_hashtag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_toRightOf="@id/ic_hashtag"
+                android:hint="@string/hint_hashtag"/>
+
+        </RelativeLayout>
+
+        <!-- Weather preferneces-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <ImageView
+                android:id="@+id/ic_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                app:srcCompat="@drawable/ic_sun"
+                android:layout_centerVertical="true"/>
+
+            <Button
+                android:id="@+id/btn_weather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_weather_constraints"
+                android:background="?android:attr/selectableItemBackground"
+                android:textAlignment="textStart"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_toRightOf="@id/ic_weather"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

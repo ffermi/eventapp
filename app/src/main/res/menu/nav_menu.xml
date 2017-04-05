@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:checkableBehavior="none">
+        <!-- TODO: re-order the list -->
+        <item
+            android:id="@+id/nav_my_ev"
+            android:icon="@drawable/ic_bookmark"
+            android:title="@string/my_events"/>
+        <item
+            android:id="@+id/nav_nearby_events"
+            android:icon="@drawable/ic_map"
+            android:title="@string/nearby_events"/>
+        <item
+            android:id="@+id/nav_popular_ev"
+            android:icon="@drawable/ic_calendar"
+            android:title="@string/popular_events"/>
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/ic_notifications"
+            android:title="@string/notifications"/>
+    </group>
+
+</menu>
